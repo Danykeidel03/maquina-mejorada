@@ -24,7 +24,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
-        cantidadBillete = 1;
+        cantidadBillete = 0;
     }
 
     /**
@@ -71,6 +71,7 @@ public class MaquinaExpendedoraMejorada {
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
+            cantidadBillete = cantidadBillete + 1;
         }
         else {
             System.out.println("Necesitas introducir " + (cantidadDineroQueFalta) + " euros mas!");
@@ -108,15 +109,7 @@ public class MaquinaExpendedoraMejorada {
     /**
      * Devuelve El Numero de Billetes Vendidos
      */
-    public int getNumeroBilletesVendidios() {
-        int numeroBilletesComprados ;
-        if (cantidadBillete >= 0) {   
-            cantidadBillete = cantidadBillete + 1;
-           System.out.println("Has Comprado " + (cantidadBillete) + "Billetes");
-        }
-        else {
-            System.out.println("No has comprado billetes ");
-        }  
+    public int getNumeroBilletesVendidos() {
         return cantidadBillete;
     }
 
