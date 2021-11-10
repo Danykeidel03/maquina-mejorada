@@ -30,7 +30,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
-        cantidadBillete = 0;
+        cantidadBillete = 1;
         descuento = codigoDescuento;
         porcentajeDeDEscuento = 0.10;
         cantidadMaximaBilletes = billetesMaximos;
@@ -83,9 +83,12 @@ public class MaquinaExpendedoraMejorada {
                 System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
                 System.out.println("# " + precioBillete + " euros.");
                 if (descuento == true) {
+                    if (cantidadBillete == 3) {
                     System.out.println("Has recibido un descuento de " + precioBillete * porcentajeDeDEscuento + " euros.");
+                    cantidadBillete = 0;
                 }
-
+                }
+            
                 System.out.println("##################");
                 System.out.println();         
 
